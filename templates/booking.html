@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container mt-3">
+    <div class="row mt-5">
+        <div class="col-10 col-md-6 offset-1 offset-md-3 mb-3">
+            <form action="{{request.path}}" method="post" class="card mb-3">
+                {{form.csrf_token()}}
+                <div class="card-body text-center pt-5">
+                    <img src="../static/pict 1.png" class="mb-3" width="95" alt="">
+                    <h2 class="h5 card-title mt-2 mb-2">{{teacher_name}}</h2>
+                    <p class="my-1">Запись на пробный урок</p>
+                    <p class="my-1">{{dayname}}, {{time}}</p>
+                </div>
+                <hr/>
+                <div class="card-body mx-3">
+
+
+                    {{form.clientName.label(class_="mb-1 mt-2")}}
+                    {{form.clientName(class_="form-control", placeholder="Введите свое имя")}}
+                    {% for err in form.clientName.errors %}
+                    <div class="alert alert-danger" role="alert">{{ err }}</div>
+                    <!--<p class="help-block help-block-error">{{ err }}</p>-->
+                    {% endfor %}
+
+
+                    {{form.clientPhone.label(class_="mb-1 mt-2")}}
+                    {{form.clientPhone(class_="form-control", placeholder="Введите свой номер", type_="tel")}}
+                    {% for err in form.clientPhone.errors %}
+                    <div class="alert alert-danger" role="alert">{{ err }}</div>
+                    <!--<p class="help-block help-block-error">{{ err }}</p>-->
+                    {% endfor %}
+
+
+                    <input type="submit" class="btn btn-primary btn-block mt-4" value="Записаться на пробный урок">
+
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
