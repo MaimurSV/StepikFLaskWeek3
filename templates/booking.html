@@ -18,6 +18,7 @@
                     {{form.clientName.label(class_="mb-1 mt-2")}}
                     {{form.clientName(class_="form-control", placeholder="Введите свое имя")}}
                     {% for err in form.clientName.errors %}
+                    <br>
                     <div class="alert alert-danger" role="alert">{{ err }}</div>
                     <!--<p class="help-block help-block-error">{{ err }}</p>-->
                     {% endfor %}
@@ -26,6 +27,7 @@
                     {{form.clientPhone.label(class_="mb-1 mt-2")}}
                     {{form.clientPhone(class_="form-control", placeholder="Введите свой номер", type_="tel")}}
                     {% for err in form.clientPhone.errors %}
+                    <br>
                     <div class="alert alert-danger" role="alert">{{ err }}</div>
                     <!--<p class="help-block help-block-error">{{ err }}</p>-->
                     {% endfor %}

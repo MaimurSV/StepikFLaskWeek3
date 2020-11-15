@@ -20,6 +20,7 @@
                         </div>
                         {% endfor %}
                         {% for err in form.goal.errors %}
+                        <br>
                         <div class="alert alert-danger" role="alert">{{ err }}</div>
                         {% endfor %}
                     </div>
@@ -32,6 +33,7 @@
                         </div>
                         {% endfor %}
                         {% for err in form.free.errors %}
+                        <br>
                         <div class="alert alert-danger" role="alert">{{ err }}</div>
                         {% endfor %}
                     </div>
@@ -42,13 +44,15 @@
                 {{form.name.label(class_="mb-1 mt-2")}}
                 {{form.name(class_="form-control", placeholder="Введите свое имя")}}
                 {% for err in form.name.errors %}
-                        <div class="alert alert-danger" role="alert">{{ err }}</div>
+                <br>
+                <div class="alert alert-danger" role="alert">{{ err }}</div>
                         {% endfor %}
                 <p></p>
 
                 {{form.phone.label(class_="mb-1 mt-2")}}
                 {{form.phone(class_="form-control", placeholder="Введите свой номер")}}
                 {% for err in form.phone.errors %}
+                <br>
                         <div class="alert alert-danger" role="alert">{{ err }}</div>
                         {% endfor %}
                 <input type="submit" class="btn btn-primary mt-4 mb-2" value="Найдите мне преподавателя">
